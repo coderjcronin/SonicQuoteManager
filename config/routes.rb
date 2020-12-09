@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'home/index'
   get 'hello/say_hello'
   
   # There is no "home" view yet. I know it's broken.
