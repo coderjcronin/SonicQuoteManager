@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :vendors
+  resources :parts
+  resources :sites
+  resources :customers
   devise_for :users
   get 'home/index'
   get 'hello/say_hello'
