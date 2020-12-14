@@ -1,13 +1,30 @@
-
 <%= simple_form_for(@customer) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :phone %>
-    <%= f.input :email %>
+
+  <div class="field">
+    <div class="control">
+          <%= f.input :name, input_html: { class: "input"}, wrapper: false, label: 'Customer Name', label_html: { class: "label"} %>
+    </div>
+  </div>
+  
+  <div class="field">
+    <div class="control">
+      <%= f.input :address, input_html: { class: "textarea"}, wrapper: false, label_html: { class: "label"} %>
+    </div>
+  </div>
+    
+  <div class="field">
+    <div class="control">
+      <%= f.input :phone, input_html: { class: "input"}, wrapper: false, label_html: { class: "label"} %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= f.input :email, input_html: { class: "input"}, wrapper: false, label: 'E-Mail', label_html: { class: "label"} %>
+    </div>
   </div>
 
   <div class="form-actions">

@@ -1,15 +1,49 @@
-
 <%= simple_form_for(@site) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :phone %>
-    <%= f.input :sitepoc %>
-    <%= f.input :sitepocphone %>
-    <%= f.input :notes %>
+
+  <div class="field">
+    <div class="control">
+          <%= f.input :name, input_html: { class: "input"}, wrapper: false, label: 'Site Name', label_html: { class: "label"} %>
+    </div>
+  </div>
+  
+  <div class="field">
+    <div class="control">
+      <%= f.input :address, input_html: { class: "textarea"}, wrapper: false, label_html: { class: "label"} %>
+    </div>
+  </div>
+    
+  <div class="field">
+    <div class="control">
+      <%= f.input :phone, input_html: { class: "input"}, wrapper: false, label_html: { class: "label"} %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= f.input :sitepoc, input_html: { class: "input"}, wrapper: false, label: 'Site Point of Contact', label_html: { class: "label"} %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= f.input :sitepocphone, input_html: { class: "input"}, wrapper: false, label: 'Site Phone Number', label_html: { class: "label"} %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= f.input :notes, input_html: { class: "textarea"}, wrapper: false, label_html: { class: "label"} %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+        <%= f.association :customer, input_html: { class: "select"}, wrapper: false, label: 'Customer', label_html: { class: "label"}, prompt: 'Select Customer' %>
+      </div>
+    </div>
   </div>
 
   <div class="form-actions">

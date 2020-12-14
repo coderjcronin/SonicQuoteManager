@@ -1,6 +1,11 @@
-<h1>Editing Site</h1>
+<div class="section">
+  <div class="container">
+    <h1 class="title">Editing <%= @site.name %></h2>
 
-<%= render 'form', site: @site %>
+    <%= render 'form', site: @site %>
 
-<%= link_to 'Show', @site %> |
-<%= link_to 'Back', sites_path %>
+    <%= link_to 'Show', @site %> |
+    <%= link_to 'Back', sites_path %>
+    
+  </div>
+</div>
