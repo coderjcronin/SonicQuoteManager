@@ -1,0 +1,39 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  site_id: 1
+  name: MyText
+  started: 2020-12-13 21:04:38
+  updated: 2020-12-13 21:04:38
+  locked: false
+  material_lines: MyText
+  service_lines: MyText
+  equip_lines: MyText
+  wire_lines: MyText
+  source: 1
+  referal: MyString
+  sale_type: 1
+  taxable: false
+  state_id: 1
+  county_id: 1
+  account_type: 1
+
+two:
+  user_id: 1
+  site_id: 1
+  name: MyText
+  started: 2020-12-13 21:04:38
+  updated: 2020-12-13 21:04:38
+  locked: false
+  material_lines: MyText
+  service_lines: MyText
+  equip_lines: MyText
+  wire_lines: MyText
+  source: 1
+  referal: MyString
+  sale_type: 1
+  taxable: false
+  state_id: 1
+  county_id: 1
+  account_type: 1

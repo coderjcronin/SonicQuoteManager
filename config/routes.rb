@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :product_line_items
+  resources :quotes
   resources :vendors
   resources :parts
   resources :sites

@@ -1,0 +1,29 @@
+
+<%= simple_form_for(@quote) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :user_id %>
+    <%= f.input :site_id %>
+    <%= f.input :name %>
+    <%= f.input :started %>
+    <%= f.input :updated %>
+    <%= f.input :locked %>
+    <%= f.input :material_lines %>
+    <%= f.input :service_lines %>
+    <%= f.input :equip_lines %>
+    <%= f.input :wire_lines %>
+    <%= f.input :source %>
+    <%= f.input :referal %>
+    <%= f.input :sale_type %>
+    <%= f.input :taxable %>
+    <%= f.input :state_id %>
+    <%= f.input :county_id %>
+    <%= f.input :account_type %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

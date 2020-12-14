@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @quote.user_id %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @quote.site_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @quote.name %>
+</p>
+
+<p>
+  <strong>Started:</strong>
+  <%= @quote.started %>
+</p>
+
+<p>
+  <strong>Updated:</strong>
+  <%= @quote.updated %>
+</p>
+
+<p>
+  <strong>Locked:</strong>
+  <%= @quote.locked %>
+</p>
+
+<p>
+  <strong>Material lines:</strong>
+  <%= @quote.material_lines %>
+</p>
+
+<p>
+  <strong>Service lines:</strong>
+  <%= @quote.service_lines %>
+</p>
+
+<p>
+  <strong>Equip lines:</strong>
+  <%= @quote.equip_lines %>
+</p>
+
+<p>
+  <strong>Wire lines:</strong>
+  <%= @quote.wire_lines %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @quote.source %>
+</p>
+
+<p>
+  <strong>Referal:</strong>
+  <%= @quote.referal %>
+</p>
+
+<p>
+  <strong>Sale type:</strong>
+  <%= @quote.sale_type %>
+</p>
+
+<p>
+  <strong>Taxable:</strong>
+  <%= @quote.taxable %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @quote.state_id %>
+</p>
+
+<p>
+  <strong>County:</strong>
+  <%= @quote.county_id %>
+</p>
+
+<p>
+  <strong>Account type:</strong>
+  <%= @quote.account_type %>
+</p>
+
+<%= link_to 'Edit', edit_quote_path(@quote) %> |
+<%= link_to 'Back', quotes_path %>

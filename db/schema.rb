@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_024935) do
+ActiveRecord::Schema.define(version: 2020_12_14_024340) do
 
   create_table "customers", force: :cascade do |t|
     t.text "name"
@@ -26,6 +26,39 @@ ActiveRecord::Schema.define(version: 2020_12_10_024935) do
     t.text "sku"
     t.text "description"
     t.decimal "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "product_line_items", force: :cascade do |t|
+    t.integer "quote_id"
+    t.integer "part_id"
+    t.decimal "labor_units"
+    t.decimal "unit_price"
+    t.decimal "full_service_price"
+    t.integer "quanity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "quotes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "site_id"
+    t.text "name"
+    t.datetime "started"
+    t.datetime "updated"
+    t.boolean "locked"
+    t.text "material_lines"
+    t.text "service_lines"
+    t.text "equip_lines"
+    t.text "wire_lines"
+    t.integer "source"
+    t.string "referal"
+    t.integer "sale_type"
+    t.boolean "taxable"
+    t.integer "state_id"
+    t.integer "county_id"
+    t.integer "account_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

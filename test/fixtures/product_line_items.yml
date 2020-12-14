@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quote_id: 1
+  part_id: 1
+  labor_units: 9.99
+  unit_price: 9.99
+  full_service_price: 9.99
+  quanity: 1
+
+two:
+  quote_id: 1
+  part_id: 1
+  labor_units: 9.99
+  unit_price: 9.99
+  full_service_price: 9.99
+  quanity: 1
