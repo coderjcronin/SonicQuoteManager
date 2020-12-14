@@ -22,9 +22,9 @@
             <td><%= customer.address %></td>
             <td><%= customer.phone %></td>
             <td><%= customer.email %></td>
-            <td><%= link_to 'Show', customer %></td>
-            <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-            <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><span class="icon"><%= link_to '<i class="fas fa-eye"></i>'.html_safe, customer %></span></td>
+            <td><span class="icon"><%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_customer_path(customer) %></span></td>
+            <td><span class="icon"><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, customer, method: :delete, data: { confirm: 'Are you sure?' } %></span></td>
           </tr>
         <% end %>
       </tbody>
