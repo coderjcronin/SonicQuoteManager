@@ -18,9 +18,9 @@
           <tr>
             <td><%= setting.optionName %></td>
             <td><%= setting.value %></td>
-            <td><%= link_to 'Show', setting %></td>
-            <td><%= link_to 'Edit', edit_setting_path(setting) %></td>
-            <td><%= link_to 'Destroy', setting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><span class="icon"><%= link_to '<i class="fas fa-eye"></i>'.html_safe, setting %></span></td>
+            <td><span class="icon"><%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_setting_path(setting) %></span></td>
+            <td><span class="icon"><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, setting, method: :delete, data: { confirm: 'Are you sure?' } %></span></td>
           </tr>
         <% end %>
       </tbody>

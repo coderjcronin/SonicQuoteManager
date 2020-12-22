@@ -1,24 +1,81 @@
-<p id="notice"><%= notice %></p>
+<%
+  install_rate = Setting.where(optionName: "installRate").take.value.to_f
+  service_rate = Setting.where(optionName: "serviceRate").take.value.to_f
+  install_mark = Setting.where(optionName: "installMark").take.value.to_f
+  service_mark = Setting.where(optionName: "serviceMark").take.value.to_f
+%>
 
-<p>
-  <strong>Name:</strong>
-  <%= @part.name %>
-</p>
+<div class="section">
+  <div class="container">
+    <div class="box">
+      <h2 class="title"><%= @part.name %></h2>
+      <div class="content">
+        <p>
+          <strong>Vendor Part Number: </strong>
+          <%= @part.sku %>
+        </p>
 
-<p>
-  <strong>Sku:</strong>
-  <%= @part.sku %>
-</p>
+        <p>
+          <strong>Description: </strong>
+          <%= @part.description %>
+        </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @part.description %>
-</p>
+        <p>
+          <strong>Price: </strong>$
+          <%= @part.price %>
+        </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @part.price %>
-</p>
+        <p>
+          <strong>Labor Units: </strong>
+          <%= @part.labor %>
+        </p>
 
-<%= link_to 'Edit', edit_part_path(@part) %> |
-<%= link_to 'Back', parts_path %>
+        <p>
+          <strong>Full Service: </strong>$
+          <%= @part.fullServ %>
+        </p>
+
+        <P>
+          <strong>Cut Sheet: </strong>
+          <span class="icon"><%= link_to '<i class="fas fa-link"></i>'.html_safe, @part.cutURL %></span>
+        </p>
+
+        <p>
+          <strong>Vendor</strong>
+          <%= @part.vendor.name %>
+        </p>
+      </div>
+    </div>
+
+    <article class="panel is-info">
+      <p class="panel-heading">Unit Price</p>
+      <a class="panel-block">
+        <span class="panel-icon">
+          <icon class="fas fa-file-invoice-dollar" aria-hidden="true"></icon>
+        </span>
+        Install (Part Only) - $<%= (@part.price + (@part.price * (install_mark * 0.01))).round(2) %>
+      </a>
+      <a class="panel-block">
+        <span class="panel-icon">
+          <icon class="fas fa-file-invoice-dollar" aria-hidden="true"></icon>
+        </span>
+        Service (Part Only) - $<%= (@part.price + (@part.price * (service_mark * 0.01))).round(2) %>
+      </a>
+      <a class="panel-block">
+        <span class="panel-icon">
+          <icon class="fas fa-file-invoice-dollar" aria-hidden="true"></icon>
+        </span>
+        Install (Unit) - $<%= ((@part.price + (@part.price * (install_mark * 0.01))) + (@part.labor * install_rate)).round(2) %>
+      </a>
+      <a class="panel-block">
+        <span class="panel-icon">
+          <icon class="fas fa-file-invoice-dollar" aria-hidden="true"></icon>
+        </span>
+        Install (Unit) - $<%= ((@part.price + (@part.price * (service_mark * 0.01))) + (@part.labor * service_rate)).round(2) %>
+      </a>
+    </article>
+
+    <%= link_to 'Edit', edit_part_path(@part) %> |
+    <%= link_to 'Back', parts_path %>
+  </div>
+</div>

@@ -12,34 +12,49 @@
   </head>
 
   <body>
-  <!-- Flash Notices -->
-    <% if flash[:notice] %>
-    	<div class="notification is-success global-notification">
-  	  	  <p class="notice"><%= notice %></p>
-    	</div>
-   	<% end %>
-    <% if flash[:alert] %>
-      <div class="notification is-danger global-notification">
-        <p class="alert"><%= alert %></p>
-      </div>
-    <% end %>
-
     <!-- Nav Bar -->
     <nav class="navbar is-link" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <%= link_to root_path, class:"navbar-item" do %>
           <h1 class="title is-5 has-text-white">SoniQuote Tool</h1>
         <% end  %>
-      <div class="navbar-burger burger" data-target="navbar">
-        <span></span>
-        <span></span>
-        <span></span>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarHome">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
-    </div>
+      <div id="navbarHome" class="navbar-menu">
+        <div class="navbar-start">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-item has-text-white">
+              Entries
+            </a>
 
- 
+            <div class="navbar-dropdown">
+              <%= link_to 'Sites', sites_path, class:"navbar-item" %>
+              <%= link_to 'Customers', customers_path, class:"navbar-item" %>
+              <%= link_to 'Parts', parts_path, class:"navbar-item" %>
+              <%= link_to 'Vendors', vendors_path, class:"navbar-item" %>
+              <%= link_to 'Settings', settings_path, class:"navbar-item" %>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
-    
+
+    <!-- Flash Notices -->
+      <% if flash[:notice] %>
+        <div class="notification is-success global-notification">
+            <p class="notice"><%= notice %></p>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="notification is-danger global-notification">
+          <p class="alert"><%= alert %></p>
+        </div>
+      <% end %>
+
     <%= yield %>
   </body>
 </html>
