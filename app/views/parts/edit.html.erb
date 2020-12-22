@@ -1,6 +1,12 @@
-<h1>Editing Part</h1>
+<div class="section">
+  <div class="container">
+    <h1 class="title">Editing <%= @part.name %></h1>
 
-<%= render 'form', part: @part %>
-
-<%= link_to 'Show', @part %> |
-<%= link_to 'Back', parts_path %>
+    <%= render 'form', part: @part %>
+    
+    <div class="has-text-centered">
+      <%= link_to 'Show', @part %> |
+      <%= link_to 'Back', parts_path %>
+    </div>
+  </div>
+</div>

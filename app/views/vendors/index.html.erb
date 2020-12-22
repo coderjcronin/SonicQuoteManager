@@ -8,7 +8,7 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Poc</th>
+          <th>POC</th>
           <th>Phone</th>
           <th>Site</th>
           <th>Description</th>
@@ -19,14 +19,14 @@
       <tbody>
         <% @vendors.each do |vendor| %>
           <tr>
-            <td><%= vendor.name %></td>
-            <td><%= vendor.poc %></td>
+            <td nowrap><%= vendor.name %></td>
+            <td nowrap><%= vendor.poc %></td>
             <td><%= vendor.phone %></td>
-            <td><%= vendor.url %></td>
+            <td><span class="icon"><%= link_to '<i class="fas fa-link"></i>'.html_safe, vendor.url %></span></td>
             <td><%= vendor.description %></td>
-            <td><%= link_to 'Show', vendor %></td>
-            <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
-            <td><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><span class="icon"><%= link_to '<i class="fas fa-eye"></i>'.html_safe, vendor %></span></td>
+            <td><span class="icon"><%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_vendor_path(vendor) %></span></td>
+            <td><span class="icon"><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, vendor, method: :delete, data: { confirm: 'Are you sure?' } %></span></td>
           </tr>
         <% end %>
       </tbody>

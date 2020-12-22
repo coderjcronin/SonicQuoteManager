@@ -25,6 +25,10 @@ class PartsController < ApplicationController
   # POST /parts.json
   def create
     @part = Part.new(part_params)
+    
+    if @part["fullServ"].blank?
+      @part["fullServ"] = (@part["price"] * 0.0125).round(2)
+    end
 
     respond_to do |format|
       if @part.save
@@ -69,6 +73,6 @@ class PartsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def part_params
-      params.require(:part).permit(:name, :sku, :description, :price)
+      params.require(:part).permit(:name, :sku, :description, :price, :vendor_id, :labor, :cutURL, :fullServ)
     end
 end

@@ -1,29 +1,47 @@
-<p id="notice"><%= notice %></p>
+<div class="section">
+  <div class="container">
+    <div class="box">
+      <h2 class="subtitle"><%= @vendor.name %></h2>
+      <div class="content">
+        <p>
+          <strong>Point of Contact:</strong> <%= @vendor.poc %>
+        </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @vendor.name %>
-</p>
+        <p>
+          <strong>Phone:</strong> <%= @vendor.phone %>
+        </p>
 
-<p>
-  <strong>Poc:</strong>
-  <%= @vendor.poc %>
-</p>
+        <p>
+          <strong>Website:</strong> <%= @vendor.url %>
+        </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @vendor.phone %>
-</p>
+        <p>
+          <strong>Description</strong><br />
+          <%= @vendor.description %>
+        </p>
+      </div>
+    </div>
 
-<p>
-  <strong>Url:</strong>
-  <%= @vendor.url %>
-</p>
+    <%
+      partList = Part.where(vendor_id: @vendor.id)
 
-<p>
-  <strong>Description:</strong>
-  <%= @vendor.description %>
-</p>
+      if partList.count > 0  %>
+    <div class="panel">
+      <p class="panel-heading">Parts - <%= partList.count %></p>
+      <div class="panel-block">
+        <% partList.each do |p| %>
+          <%= link_to part_path(p.id), :class => 'panel-block' do %>
+          <span class="panel-icon">
+            <icon class="fas fa-puzzle-piece" aria-hidden="true"></icon>
+          </span>
+          <%= p.name %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_vendor_path(@vendor) %> |
 <%= link_to 'Back', vendors_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_15_133809) do
+ActiveRecord::Schema.define(version: 2020_12_21_172442) do
 
   create_table "customers", force: :cascade do |t|
     t.text "name"
@@ -65,6 +65,13 @@ ActiveRecord::Schema.define(version: 2020_12_15_133809) do
     t.integer "account_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.text "optionName"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "value"
   end
 
   create_table "sites", force: :cascade do |t|

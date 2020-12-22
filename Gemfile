@@ -59,11 +59,9 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  # Use PG as the database for Active Record
-  gem 'pg'
 end
 
-group :production do
+group :production, :test do
   gem 'pg'
 end
 

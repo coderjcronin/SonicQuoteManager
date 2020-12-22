@@ -1,16 +1,70 @@
-
 <%= simple_form_for(@part) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :sku %>
-    <%= f.input :description %>
-    <%= f.input :price %>
+  <div class="field">
+    <p class="control">
+          <%= f.input :name, input_html: { class: "input"}, wrapper: false, label: 'Name', label_html: { class: "label is-normal"}, placeholder: 'Name' %>
+    </p>
+  </div>
+  
+  <div class="field">
+    <p class="control">
+      <%= f.input :sku, input_html: { class: "input"}, wrapper: false, label: 'Vendor Part Number', label_html: { class: "label is-normal"}, placeholder: 'SKU / Part Number' %>
+    </p>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="field">
+    <label class="label is-normal">Cost</label>
+    <p class="control has-icons-left">
+      <%= f.input :price, input_html: { class: "input"}, wrapper: false, placeholder: 'Cost', label: false %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-dollar-sign"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <%= f.input :labor, input_html: { class: "input"}, wrapper: false, label: 'Labor Hours', label_html: { class: "label is-normal" }, placeholder: 'Labor Hours' %>
+    </p>
+  </div>
+
+  <div class="field">
+    <label class="label is-normal">Full Service Rate</label>
+    <p class="control has-icons-left">
+      <%= f.input :fullServ, input_html: { class: "input"}, wrapper: false, label: false, hint: 'Use to specify manual full service fee, otherwise, calculated at 1.25%', hint_html: { class: "help"} %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-dollar-sign"></i>
+      </span>    
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <%= f.input :description, input_html: { class: "textarea"}, wrapper: false, label: 'Part Description', label_html: { class: "label is-normal" }, placeholder: 'Description' %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <%= f.input :cutURL, input_html: { class: "input"}, wrapper: false, label: 'Cut Sheet URL', label_html: { class: "label is-normal"} %>
+    </p>
+  </div>
+
+  <div class="field">
+    <p class="control">
+        <%= f.association :vendor, input_html: { class: "select"}, wrapper: false, label: 'Vendor', label_html: { class: "label is-normal"}, prompt: 'Select Vendor' %>
+      </div>
+    </p>
+  </div>
+
+  <div class="form-actions field has-text-centered">
+    <%= button_tag type: 'submit', class: "button is-success" do %>
+      <span class="icon is-small">
+        <i class="fas fa-check"></i>
+      </span>
+      <span>Save</span>
+    <% end %>
   </div>
 <% end %>

@@ -1,0 +1,19 @@
+<div class="section">
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    <div class="content">
+      <p>
+        <strong>Option Name:</strong>
+        <%= @setting.optionName %>
+      </p>
+      <p>
+        <strong>Value: </strong>
+        <%= @setting.value %>
+      </p>
+    </div>
+
+    <%= link_to 'Edit', edit_setting_path(@setting) %> |
+    <%= link_to 'Back', settings_path %>
+    
+  </div>
+</div>
