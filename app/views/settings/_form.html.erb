@@ -4,15 +4,15 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="field">
-    <div class="control">
+    <p class="control">
       <%= f.input :optionName, wrapper: false, input_html: { class: "input" }, label: 'Setting Name', label_html: { class: "label is-normal"} %>
-    </div>
+    </p>
   </div>
 
   <div class="field">
-    <div class="control">
+    <p class="control">
       <%= f.input :value, wrapper: false, input_html: { class: "input" }, label: 'Value', label_html: { class: "label is-normal"} %>
-    </div>
+    </p>
   </div>
 
   <div class="form-actions field is-grouped is-grouped-centered">

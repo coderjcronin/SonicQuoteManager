@@ -1,7 +1,5 @@
 <div class="section">
   <div class="container">
-    <p id="notice"><%= notice %></p>
-
     <h1 class="title">Settings</h1>
 
     <table class="table">
@@ -28,6 +26,9 @@
 
     <br>
 
-    <%= link_to 'New Setting', new_setting_path %>
+    <div class="has-text-centered">
+      <%= link_to 'New Setting', new_setting_path, class: "button is-primary" %>
+    </div>
+
   </div>
 </div>
