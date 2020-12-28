@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :settings
   resources :product_line_items
   resources :quotes
