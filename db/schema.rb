@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_28_161902) do
+ActiveRecord::Schema.define(version: 2020_12_28_162609) do
 
   create_table "categories", force: :cascade do |t|
     t.text "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_12_28_161902) do
     t.decimal "labor"
     t.text "cutURL"
     t.decimal "fullServ"
+    t.integer "categoryID"
   end
 
   create_table "product_line_items", force: :cascade do |t|
